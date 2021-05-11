@@ -22,7 +22,7 @@ export const getApuestasByUserId = async (req, res) => {
     const query =
       "SELECT combinacion, sorteo_date FROM apuestas WHERE user_id=?";
     const result = await conn.query(query, req.params.userId);
-    res.status(200).json(result);
+    res.status(200).json(req);
   } catch (error) {
     console.log(error);
   }
