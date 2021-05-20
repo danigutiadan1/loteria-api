@@ -11,7 +11,8 @@ services:
       MYSQL_PASSWORD: loteria
     ports:
       - "3320:3306"
+    command: --init-file init.sql
     volumes:
-      - loteria-data:/var/lib/mysql
+      - .\loteria-data:/var/lib/mysql
 volumes:
   dbdata:
