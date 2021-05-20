@@ -11,6 +11,7 @@ export const getApuestas = async (req, res) => {
 
     //Respuesta al cliente
     res.status(200).json(productos);
+    conn.end()
   } catch (error) {
     console.log(error);
   }
@@ -23,6 +24,7 @@ export const getApuestasByUserId = async (req, res) => {
       "SELECT combinacion, sorteo_date, created_date, apuesta_id FROM apuestas WHERE user_id=?";
     const result = await conn.query(query, req.params.userId);
     res.status(200).json(result);
+    conn.end()
   } catch (error) {
     console.log(error);
   }
@@ -39,21 +41,23 @@ export const getApuestaById = async (req, res) => {
     ]);
   
       res.status(200).json(result);
+      conn.end()
   } catch (error) {
     console.log(error);
   }
 };
 
 export const createApuesta = async (req, res) => {
-  const { user_id, combinacion, sorteo_date } = req.body;
+  const { combinacion, sorteo_date } = req.body;
   try {
     const conn = await pool.getConnection();
     //Crea una nueva consulta
     const query =
       "INSERT INTO apuestas (user_id, combinacion, sorteo_date) VALUES (?,?,?)";
     //Se ejecuta la consulta
-    const result = await conn.query(query,[req.params.userId, combinacion, sorteo_date]);
+    const result = await conn.query(query,[req.params.userId,combinacion, sorteo_date]);
     res.status(201).json(result);
+    conn.end()
   } catch (error) {
     console.log(error);
   }

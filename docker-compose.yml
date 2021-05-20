@@ -1,0 +1,17 @@
+version: '3'
+ 
+services:
+  db:
+    image: mariadb/server:10.4
+    container_name: loteria-app
+    environment:
+      MYSQL_ROOT_PASSWORD: loteria
+      MYSQL_DATABASE: loteria
+      MYSQL_USER: root
+      MYSQL_PASSWORD: loteria
+    ports:
+      - "3320:3306"
+    volumes:
+      - loteria-data:/var/lib/mysql
+volumes:
+  dbdata:

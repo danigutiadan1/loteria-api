@@ -2,7 +2,7 @@ const mariadb = require('mariadb')
 
 const pool = mariadb.createPool({
     host: '127.0.0.1',
-    port: '3307',
+    port: '3320',
     user: 'root',
     password: 'loteria',
     database: 'loteria'
