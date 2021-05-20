@@ -1,4 +1,4 @@
-CREATE DATABASE `loteria` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE loteria;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -20,5 +20,7 @@ CREATE TABLE `apuestas` (
   KEY `apuestas_FK` (`user_id`),
   CONSTRAINT `apuestas_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+commit;
 
 

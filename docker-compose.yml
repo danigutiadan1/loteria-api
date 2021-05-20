@@ -4,15 +4,14 @@ services:
   db:
     image: mariadb/server:10.4
     container_name: loteria-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: loteria
       MYSQL_DATABASE: loteria
-      MYSQL_USER: root
-      MYSQL_PASSWORD: loteria
     ports:
       - "3320:3306"
-    command: --init-file init.sql
     volumes:
-      - .\loteria-data:/var/lib/mysql
-volumes:
-  dbdata:
+      - ./loteria-data:/var/lib/mysql
+      - .\mariadb\bbdd.sql:/docker-entrypoint-initdb.d/bbdd.sql
