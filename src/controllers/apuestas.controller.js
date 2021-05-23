@@ -7,10 +7,10 @@ export const getApuestas = async (req, res) => {
     //Crea una nueva consulta
     const query = "SELECT * FROM apuestas";
     //Se ejecuta la consulta
-    const productos = await conn.query(query);
+    const result = await conn.query(query);
 
     //Respuesta al cliente
-    res.status(200).json(productos);
+    res.status(200).json(result);
     conn.end()
   } catch (error) {
     console.log(error);
@@ -65,4 +65,4 @@ export const createApuesta = async (req, res) => {
   //Get the connection
 };
 
-export const deleteApuestaById = (req, res) => {};
+

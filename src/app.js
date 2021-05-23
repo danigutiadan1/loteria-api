@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 //const pool = require("./database");
 
 
-app.get('/loteria-api', (req, res) =>{
+app.get('/', (req, res) =>{
   res.sendFile('index.html', {root: 'src'});
 });
 
