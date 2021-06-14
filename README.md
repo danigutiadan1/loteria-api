@@ -1,6 +1,8 @@
 # loteria-api
 API creada para mi proyecto final de ciclo. Esta API va ligada junto con la aplicación Android. Fue creada para la posible interacción entre la aplicación y la base de datos.
 
+En este proyecto se ha usado NodeJS junto con Express para crear las consultas. Tambíen se han usado otros frameworks como nodemon, babel etc...
+
 Las funcionalidades creadas hasta la fecha son las siguientes:
 - Edpoint de regsitro de usuario
 - Endpoint de inicio de sesión de usuario
